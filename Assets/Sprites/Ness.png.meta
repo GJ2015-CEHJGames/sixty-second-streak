@@ -38,6 +38,7 @@ TextureImporter:
     21300066: WomanL2
     21300068: WomanR1
     21300070: WomanR1
+    21300072: Tree1
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -376,6 +377,16 @@ TextureImporter:
         y: 464
         width: 16
         height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Tree1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 362
+        width: 31
+        height: 54
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
