@@ -135,7 +135,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 60 SECOND STREAK
+  m_Text: 60 SECOND STREAKER
 --- !u!222 &180554315
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -186,7 +186,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 60 SECOND STREAK
+  m_Text: 60 SECOND STREAKER
 --- !u!222 &314052371
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -302,6 +302,14 @@ Prefab:
     - target: {fileID: 22404932, guid: 7bde24cf3ee56498bb49196c82c623e9, type: 2}
       propertyPath: m_SizeDelta.x
       value: 184
+      objectReference: {fileID: 0}
+    - target: {fileID: 11480062, guid: 7bde24cf3ee56498bb49196c82c623e9, type: 2}
+      propertyPath: m_Text
+      value: 60 SECOND STREAKER
+      objectReference: {fileID: 0}
+    - target: {fileID: 11414306, guid: 7bde24cf3ee56498bb49196c82c623e9, type: 2}
+      propertyPath: m_Text
+      value: 60 SECOND STREAKER
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7bde24cf3ee56498bb49196c82c623e9, type: 2}
