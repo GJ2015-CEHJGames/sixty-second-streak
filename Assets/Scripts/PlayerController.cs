@@ -20,11 +20,9 @@ public class PlayerController : MonoBehaviour
 		renderer.sortingOrder = Mathf.RoundToInt(Mathf.Abs(transform.position.y));
 
 		Vector2 vel = rigidbody2D.velocity;
-		float horiz = Input.GetAxis("Horizontal");
-		float vert = Input.GetAxis("Vertical");
-
-		vel.x = horiz * speed * Time.deltaTime;
-		vel.y = vert * speed * Time.deltaTime;
+		float horiz = Input.GetAxisRaw("Horizontal");
+		float vert = Input.GetAxisRaw("Vertical");
+		vel = new Vector2(horiz, vert).normalized * speed * Time.deltaTime;
 
 		// Change animation states
 		/*if (vert > 0)
