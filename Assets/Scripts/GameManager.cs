@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
 	// UI
 	public GameObject header;
 	public GameObject startButton;
+	public GameObject playerObj;
 
 	public float gameTimer;
 	public int score = 0;
@@ -69,5 +70,21 @@ public class GameManager : MonoBehaviour
 		header.SetActive(false);
 		startButton.SetActive(false);
 		Time.timeScale = 1;
+		playerObj.SetActive(true);
+	}
+
+	public void ReplayClicked()
+	{
+
+	}
+
+	public void MainMenuClicked()
+	{
+
+	}
+
+	public void LevelSelectClicked()
+	{
+			
 	}
 }

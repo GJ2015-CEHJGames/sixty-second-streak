@@ -4,6 +4,8 @@ TextureImporter:
   fileIDToRecycleName:
     21300000: playerM1
     21300002: playerM2
+    21300004: player_2
+    21300006: player_3
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -60,6 +62,26 @@ TextureImporter:
         serializedVersion: 2
         x: 96
         y: 314
+        width: 60
+        height: 80
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: player_2
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 230
+        width: 60
+        height: 80
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: player_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 230
         width: 60
         height: 80
       alignment: 0
