@@ -84,6 +84,21 @@ public class NPCController : MonoBehaviour
 		{
 			player = col;
 			escapeVector = (transform.position - col.transform.position).normalized;
+			if (Mathf.Abs(escapeVector.x) > Mathf.Abs(escapeVector.y))
+			{
+				if (escapeVector.x > 0)
+				{facing = 3;}
+				else
+				{facing = 1;}
+			}
+			else
+			{
+				if (escapeVector.y > 0)
+				{facing = 2;}
+				else
+				{facing = 0;}
+			}
+			animator.SetInteger("Facing", facing);
 			currState = States.Escaping;
 			Destroy(GetComponent<BoxCollider2D>());
 		}

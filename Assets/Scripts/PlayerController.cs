@@ -27,14 +27,14 @@ public class PlayerController : MonoBehaviour
 		vel.y = vert * speed * Time.deltaTime;
 
 		// Change animation states
-		if (vert > 0)
+		/*if (vert > 0)
 		{animator.SetInteger("Facing", 2);}
 		else if (vert < 0)
 		{animator.SetInteger("Facing", 0);}
 		if (horiz < 0)
 		{animator.SetInteger("Facing", 1);}
 		else if (horiz > 0)
-		{animator.SetInteger("Facing", 3);}
+		{animator.SetInteger("Facing", 3);}*/
 
 		rigidbody2D.velocity = vel;
 		animator.speed = Mathf.Max(Mathf.Abs(horiz), Mathf.Abs(vert));
