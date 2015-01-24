@@ -4,6 +4,7 @@ using System.Collections;
 public class NPCController : MonoBehaviour
 {
 	public float speed = 100;
+	public bool scared = false;
 	enum States
 	{Waiting, Moving, Escaping};
 	private States currState;
@@ -25,6 +26,8 @@ public class NPCController : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
+		renderer.sortingOrder = Mathf.RoundToInt(Mathf.Abs(transform.position.y));
+
 		Vector2 vel = rigidbody2D.velocity;
 
 		switch (currState)
@@ -82,6 +85,7 @@ public class NPCController : MonoBehaviour
 			player = col;
 			escapeVector = (transform.position - col.transform.position).normalized;
 			currState = States.Escaping;
+			Destroy(GetComponent<BoxCollider2D>());
 		}
 	}
 }

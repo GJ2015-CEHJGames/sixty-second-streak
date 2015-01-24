@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class GameManager : MonoBehaviour
@@ -6,11 +7,13 @@ public class GameManager : MonoBehaviour
 	public float gameTimer;
 	public int score = 0;
 	public bool gameOver = false;
+	public Text scoreText;
+	public Text timerText;
 
 	// Use this for initialization
 	void Start() 
 	{
-		
+
 	}
 	
 	// Update is called once per frame
@@ -27,5 +30,8 @@ public class GameManager : MonoBehaviour
 				Debug.Log("Game Over! Final Score: " + score);
 			}
 		}
+
+		scoreText.text = "SCORE: " + score.ToString();
+		timerText.text = "TIMER: " + gameTimer.ToString("n0");
 	}
 }

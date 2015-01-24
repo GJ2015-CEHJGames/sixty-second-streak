@@ -17,6 +17,8 @@ public class PlayerController : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
+		renderer.sortingOrder = Mathf.RoundToInt(Mathf.Abs(transform.position.y));
+
 		Vector2 vel = rigidbody2D.velocity;
 		float horiz = Input.GetAxis("Horizontal");
 		float vert = Input.GetAxis("Vertical");
@@ -40,9 +42,10 @@ public class PlayerController : MonoBehaviour
 
 	void OnTriggerEnter2D(Collider2D col)
 	{
-		if (col.name == "NPC")
+		if (col.name == "NPC" && !col.GetComponent<NPCController>().scared)
 		{
 			gmmgr.score += 1;
+			col.GetComponent<NPCController>().scared = true;;
 		}
 	}
 }
