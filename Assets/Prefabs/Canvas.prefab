@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &104932
 GameObject:
   m_ObjectHideFlags: 1
@@ -34,7 +34,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &104934
 GameObject:
   m_ObjectHideFlags: 1
@@ -68,7 +68,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &114308
 GameObject:
   m_ObjectHideFlags: 0
@@ -105,7 +105,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &114408
 GameObject:
   m_ObjectHideFlags: 1
@@ -135,12 +135,12 @@ GameObject:
   - 114: {fileID: 11419080}
   - 114: {fileID: 11419082}
   m_Layer: 5
-  m_Name: Level Button
+  m_Name: BackToTitleButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &119084
 GameObject:
   m_ObjectHideFlags: 1
@@ -152,12 +152,12 @@ GameObject:
   - 222: {fileID: 22219084}
   - 114: {fileID: 11419084}
   m_Layer: 5
-  m_Name: LevelText
+  m_Name: BackToTitleText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &142774
 GameObject:
   m_ObjectHideFlags: 0
@@ -260,7 +260,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &196098
 GameObject:
   m_ObjectHideFlags: 1
@@ -277,7 +277,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &11404090
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -412,7 +412,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 60 SECOND STREAK
+  m_Text: 60 SECOND STREAKER
 --- !u!114 &11414308
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -625,7 +625,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Back to Play
+  m_Text: Back to Title Page
 --- !u!114 &11442774
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -791,7 +791,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 60 SECOND STREAK
+  m_Text: 60 SECOND STREAKER
 --- !u!114 &11488676
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1017,8 +1017,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 296, y: -255.5}
-  m_SizeDelta: {x: 206, y: 42}
+  m_AnchoredPosition: {x: 308, y: -256}
+  m_SizeDelta: {x: 184, y: 42}
   m_Pivot: {x: .467026919, y: .5}
 --- !u!224 &22404934
 RectTransform:
