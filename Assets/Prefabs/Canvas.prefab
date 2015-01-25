@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &104932
 GameObject:
   m_ObjectHideFlags: 1
@@ -569,7 +569,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &193066
 GameObject:
   m_ObjectHideFlags: 1
@@ -1778,9 +1778,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: .39199999}
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1812,33 +1812,35 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1.25
-  m_Text: '<size=26>60 Second Streaker</size>
+  m_Text: '
+
+    <size=26>60-Second Streaker!!</size>
 
 
     You wake up one day and realize you aren''t wearing any clothing. What do you
     do? Run around outside and scare people with nudity, of course!
 
 
-    DESIGN
+    <size=20>DESIGN</size>
 
     Jenn Lay
 
     Chris Chung
 
 
-    PROGRAMMING
+    <size=20>PROGRAMMING</size>
 
     Chris Chung
 
     Holly Moody
 
 
-    Sound
+    <size=20>Sound</size>
 
     Ben Bartlett
 
 
-    Art
+    <size=20>Art</size>
 
     Jenn Lay
 
@@ -2522,7 +2524,7 @@ RectTransform:
   m_RootOrder: 2
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -.00189208984, y: 120.000031}
+  m_AnchoredPosition: {x: -414, y: 33}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22436068
@@ -2556,7 +2558,7 @@ RectTransform:
   m_RootOrder: 4
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -300, y: -21}
+  m_AnchoredPosition: {x: 237, y: 33}
   m_SizeDelta: {x: 100, y: 142}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22442696
@@ -2590,7 +2592,7 @@ RectTransform:
   m_RootOrder: 5
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 322, y: -21}
+  m_AnchoredPosition: {x: 419, y: -58}
   m_SizeDelta: {x: 100, y: 142}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22442700
@@ -2641,7 +2643,7 @@ RectTransform:
   m_RootOrder: 3
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: .0650939941, y: 33}
+  m_AnchoredPosition: {x: -414, y: -69}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22453678
@@ -2801,9 +2803,9 @@ RectTransform:
   m_Father: {fileID: 22414308}
   m_RootOrder: 1
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 554.880005, y: 300}
-  m_SizeDelta: {x: 1109.80005, y: 600}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22493066
 RectTransform:
@@ -2819,8 +2821,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -.0499725342, y: 0}
-  m_SizeDelta: {x: 1109.90002, y: 600}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1110, y: 600}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22496098
 RectTransform:
