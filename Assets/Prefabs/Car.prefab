@@ -28,7 +28,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 181808}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 76.0999985, y: -25.5, z: 0}
+  m_LocalPosition: {x: -3.23757553, y: -49.3149605, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -57,8 +57,8 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Size: {x: 11.8149719, y: 5.3081665}
-  m_Center: {x: -.282478333, y: .0684814453}
+  m_Size: {x: 10.6073322, y: 3.87871361}
+  m_Center: {x: -.0483446121, y: -.128684998}
 --- !u!61 &6181808
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -68,8 +68,8 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: 9.26269531, y: 2.60478592}
-  m_Center: {x: -.599220276, y: -1.19760704}
+  m_Size: {x: 10.199234, y: 2.03792763}
+  m_Center: {x: -.130950928, y: -.914180756}
 --- !u!82 &8202614
 AudioSource:
   m_ObjectHideFlags: 1
@@ -145,6 +145,15 @@ MonoBehaviour:
   aSource: {fileID: 8202614}
   honkSound: {fileID: 8300000, guid: 039e1539c30ff41188f0ddf5ffec0d51, type: 3}
   crashSound: {fileID: 8300000, guid: 2cc7d5d9d774645d4b739bc156cd2642, type: 3}
+  carColors:
+  - {r: .845588207, g: .205179483, b: .205179483, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: .183823526, g: .183823526, b: .183823526, a: 1}
+  - {r: .107543245, g: .435294122, b: .202490583, a: 1}
+  - {r: .17560555, g: .264359802, b: .852941155, a: 1}
+  - {r: .987728179, g: 1, b: .110294104, a: 1}
+  - {r: 1, g: .534989834, b: .0367646813, a: 1}
+  - {r: .475763708, g: .306714982, b: .683823526, a: 1}
 --- !u!212 &21281808
 SpriteRenderer:
   m_ObjectHideFlags: 1
