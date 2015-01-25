@@ -175,7 +175,7 @@ public class GameManager : MonoBehaviour
 		countdownTimer = 3;
 		countdownText.gameObject.SetActive(true);
 		gameOver = false;
-		Camera.main.transform.position = new Vector3(0, -11.35f, -10);
+		Camera.main.transform.position = new Vector3(0, -18.7f, -10);
 	}
 
 	public void MainMenuClicked()

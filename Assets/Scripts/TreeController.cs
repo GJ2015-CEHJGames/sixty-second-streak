@@ -10,6 +10,7 @@ public class TreeController : MonoBehaviour
 	void Start()
 	{
 		animator = this.GetComponent<Animator>();
+		renderer.sortingOrder = Mathf.RoundToInt(Mathf.Abs(transform.position.y));
 	}
 	
 	// Update is called once per frame
