@@ -33,6 +33,8 @@ public class GameManager : MonoBehaviour
 	public Transform NPCs;
 	private GameObject plyr;
 
+	public AudioSource audioSource;
+
 	// Use this for initialization
 	void Start() 
 	{
@@ -76,8 +78,8 @@ public class GameManager : MonoBehaviour
 				}
 			}
 			
-			scoreText.text = "SCORE: " + score.ToString();
-			timerText.text = "TIMER: " + gameTimer.ToString("n0");
+			scoreText.text = "SCORE-" + score.ToString();
+			timerText.text = "TIMER-" + gameTimer.ToString("n0");
 			break;
 		}
 
@@ -109,6 +111,7 @@ public class GameManager : MonoBehaviour
 
 	public void StartGame()
 	{
+		audioSource.Play();
 		currGameState = GameStates.Gameplay;
 		
 		if (isMale)
@@ -152,6 +155,7 @@ public class GameManager : MonoBehaviour
 		countdownTimer = 3;
 		countdownText.gameObject.SetActive(true);
 		gameOver = false;
+		Camera.main.transform.position = new Vector3(0, -11.35f, -10);
 	}
 
 	public void MainMenuClicked()

@@ -10,6 +10,10 @@ TextureImporter:
     21300010: player_5
     21300012: player_6
     21300014: player_7
+    21300016: NPC1_Scared1
+    21300018: NPC1_Scared2
+    21300020: NPC2_Scared1
+    21300022: NPC2_Scared2
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -30,7 +34,7 @@ TextureImporter:
   generateCubemap: 0
   seamlessCubemap: 0
   textureFormat: -3
-  maxTextureSize: 512
+  maxTextureSize: 4096
   textureSettings:
     filterMode: 0
     aniso: 16
@@ -127,6 +131,46 @@ TextureImporter:
         x: 97
         y: 60
         width: 60
+        height: 80
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: NPC1_Scared1
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 148
+        width: 60
+        height: 80
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: NPC1_Scared2
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 148
+        width: 60
+        height: 80
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: NPC2_Scared1
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 63
+        width: 60
+        height: 80
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: NPC2_Scared2
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 63
+        width: 65
         height: 80
       alignment: 0
       pivot: {x: .5, y: .5}

@@ -1,11 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class NPCController : MonoBehaviour
 {
 	public float speed = 100;
 	public bool scared = false;
 	public SpriteRenderer sprRenderer;
+	public List<Sprite> bubbleSprites = new List<Sprite>();
 	enum States
 	{Waiting, Moving, Escaping};
 	private States currState;
@@ -30,9 +32,9 @@ public class NPCController : MonoBehaviour
 	void Update()
 	{
 		if (scared)
-		{sprRenderer.color = Color.red;}
+		{animator.SetBool("Scared", true);}
 		else
-		{sprRenderer.color = Color.white;}
+		{animator.SetBool("Scared", false);}
 		renderer.sortingOrder = Mathf.RoundToInt(Mathf.Abs(transform.position.y));
 
 		Vector2 vel = rigidbody2D.velocity;
@@ -74,10 +76,15 @@ public class NPCController : MonoBehaviour
 				break;
 			// Escaping
 			case States.Escaping:
+				Vector3 tempScale = transform.localScale;
 				vel = (speed / 12) * escapeVector;
-				// Need to change facing direction
-
-				if (Vector2.Distance(player.transform.position, transform.position) > 8)
+				if (escapeVector.x > 0)
+				{tempScale.x = -1;}
+				else
+				{tempScale.x = 1;}
+				transform.localScale = tempScale;
+				animator.speed = 1;
+				if (player != null && Vector2.Distance(player.transform.position, transform.position) > 8)
 				{currState = States.Waiting;}
 				break;
 		}
@@ -114,7 +121,7 @@ public class NPCController : MonoBehaviour
 	public void ResetPos()
 	{
 		transform.position = startPos;
-		sprRenderer.color = Color.red;
 		scared = false;
+		animator.SetBool("Scared", false);
 	}
 }

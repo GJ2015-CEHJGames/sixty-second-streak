@@ -29,8 +29,8 @@ public class CarController : MonoBehaviour
 
 		rigidbody2D.velocity = vel;
 
-		if (Mathf.Abs(transform.position.x) > 200)
-		{Destroy(this);}
+		if (Mathf.Abs(transform.position.x) > 100)
+		{Destroy(gameObject);}
 	}
 
 	void OnTriggerEnter2D(Collider2D col)
