@@ -37,6 +37,8 @@ public class GameManager : MonoBehaviour
 	public GameObject plyr;
 
 	public AudioSource audioSource;
+	public AudioClip maleSelectSound;
+	public AudioClip femaleSelectSound;
 
 	// Use this for initialization
 	void Start() 
@@ -107,6 +109,8 @@ public class GameManager : MonoBehaviour
 		currGameState = GameStates.Countdown;
 		mainPanel.SetActive(true);
 		Time.timeScale = 1;
+		audioSource.clip = maleSelectSound;
+		audioSource.Play();
 	}
 
 	public void FemaleSelected()
@@ -116,6 +120,8 @@ public class GameManager : MonoBehaviour
 		currGameState = GameStates.Countdown;
 		mainPanel.SetActive(true);
 		Time.timeScale = 1;
+		audioSource.clip = femaleSelectSound;
+		audioSource.Play();
 	}
 
 	public void StartGame()

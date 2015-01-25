@@ -14,6 +14,7 @@ TextureImporter:
     21300018: NPC1_Scared2
     21300020: NPC2_Scared1
     21300022: NPC2_Scared2
+    21300024: car1
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -171,6 +172,16 @@ TextureImporter:
         x: 265
         y: 63
         width: 65
+        height: 80
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: car1
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 318
+        width: 180
         height: 80
       alignment: 0
       pivot: {x: .5, y: .5}
