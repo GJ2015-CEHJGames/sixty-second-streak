@@ -11,9 +11,10 @@ public class NPCController : MonoBehaviour
 	private Animator animator;
 	private float waitTimer = 0;
 	private float moveTimer = 0;
-	private int facing = 0; // 0 = Down, 1 = Left, 2 = Up, 3 = Right
+	//private int facing = 0; // 0 = Down, 1 = Left, 2 = Up, 3 = Right
 	private Vector2 escapeVector;
 	private Collider2D player;
+	private Vector3 startPos;
 
 	// Use this for initialization
 	void Start()
@@ -21,6 +22,7 @@ public class NPCController : MonoBehaviour
 		currState = States.Waiting;
 		waitTimer = Random.Range(0.1f, 1.0f);
 		animator = this.GetComponent<Animator>();
+		startPos = transform.position;
 	}
 	
 	// Update is called once per frame
@@ -39,17 +41,17 @@ public class NPCController : MonoBehaviour
 				else if (waitTimer <= 0)
 				{
 					currState = States.Moving;
-					facing = Random.Range(0, 5);
-					animator.SetInteger("Facing", facing);
+					//facing = Random.Range(0, 5);
+					//animator.SetInteger("Facing", facing);
 					moveTimer = Random.Range(0.1f, 2.0f);
-					if (facing == 0)
+					/*if (facing == 0)
 					{vel.y = -speed * Time.deltaTime;}
 					else if (facing == 2)
 					{vel.y = speed * Time.deltaTime;}
 					if (facing == 1)
 					{vel.x = -speed * Time.deltaTime;}
 					else if (facing == 3)
-					{vel.x = speed * Time.deltaTime;}
+					{vel.x = speed * Time.deltaTime;}*/
 					animator.speed = 0.5f;
 				}
 				break;
@@ -80,11 +82,11 @@ public class NPCController : MonoBehaviour
 
 	void OnTriggerEnter2D(Collider2D col)
 	{
-		if (col.name == "Player")
+		if (col.name.Contains("Player"))
 		{
 			player = col;
 			escapeVector = (transform.position - col.transform.position).normalized;
-			if (Mathf.Abs(escapeVector.x) > Mathf.Abs(escapeVector.y))
+			/*if (Mathf.Abs(escapeVector.x) > Mathf.Abs(escapeVector.y))
 			{
 				if (escapeVector.x > 0)
 				{facing = 3;}
@@ -98,9 +100,15 @@ public class NPCController : MonoBehaviour
 				else
 				{facing = 0;}
 			}
-			animator.SetInteger("Facing", facing);
+			animator.SetInteger("Facing", facing);*/
 			currState = States.Escaping;
 			Destroy(GetComponent<BoxCollider2D>());
 		}
+	}
+
+	public void ResetPos()
+	{
+		transform.position = startPos;
+		scared = false;
 	}
 }

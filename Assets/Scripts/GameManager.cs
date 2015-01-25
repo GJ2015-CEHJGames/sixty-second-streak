@@ -5,18 +5,33 @@ using System.Collections;
 public class GameManager : MonoBehaviour
 {
 	enum GameStates
-	{Title, About, Gameplay, Endgame};
+	{Title, About, Gameplay, Endgame, Countdown};
 	private GameStates currGameState;
 	// UI
-	public GameObject header;
-	public GameObject startButton;
-	public GameObject playerObj;
+	//public GameObject header;
+	//public GameObject startButton;
+	//public GameObject creditsButton;
+	public GameObject titlePanel;
+	public GameObject creditsPanel;
+	public GameObject tallyPanel;
+	public GameObject mainPanel;
+	public GameObject genderPanel;
+	public GameObject playerObjF;
+	public GameObject playerObjM;
+	public bool isMale;
 
+	public TopDownCameraFollow tdcf;
+	public float countdownTimer = 3;
 	public float gameTimer;
 	public int score = 0;
 	public bool gameOver = false;
 	public Text scoreText;
 	public Text timerText;
+	public Text tallyText;
+	public Text countdownText;
+
+	public Transform NPCs;
+	private GameObject plyr;
 
 	// Use this for initialization
 	void Start() 
@@ -30,13 +45,18 @@ public class GameManager : MonoBehaviour
 	{
 		switch (currGameState)
 		{
-		// Title
-		case GameStates.Title:
-
-			break;
-		// About
-		case GameStates.About:
-
+		// Countdown
+		case GameStates.Countdown:
+			if (countdownTimer > 0)
+			{
+				countdownTimer -= Time.deltaTime;
+				countdownText.text = countdownTimer.ToString("n0");
+			}
+			else if (countdownTimer <= 0)
+			{
+				countdownText.gameObject.SetActive(false);
+				StartGame();
+			}
 			break;
 		// Gameplay
 		case GameStates.Gameplay:
@@ -49,16 +69,14 @@ public class GameManager : MonoBehaviour
 					gameOver = true;
 					currGameState = GameStates.Endgame;
 					Time.timeScale = 0;
-					Debug.Log("Game Over! Final Score: " + score);
+					mainPanel.SetActive(false);
+					tallyPanel.SetActive(true);
+					tallyText.text = score.ToString();
 				}
 			}
 			
 			scoreText.text = "SCORE: " + score.ToString();
 			timerText.text = "TIMER: " + gameTimer.ToString("n0");
-			break;
-		// Endgame
-		case GameStates.Endgame:
-
 			break;
 		}
 
@@ -66,25 +84,79 @@ public class GameManager : MonoBehaviour
 
 	public void StartClicked()
 	{
-		currGameState = GameStates.Gameplay;
-		header.SetActive(false);
-		startButton.SetActive(false);
+		titlePanel.SetActive(false);
+		genderPanel.SetActive(true);
+	}
+
+	public void MaleSelected()
+	{
+		isMale = true;
+		genderPanel.SetActive(false);
+		currGameState = GameStates.Countdown;
+		mainPanel.SetActive(true);
 		Time.timeScale = 1;
-		playerObj.SetActive(true);
+	}
+
+	public void FemaleSelected()
+	{
+		isMale = false;
+		genderPanel.SetActive(false);
+		currGameState = GameStates.Countdown;
+		mainPanel.SetActive(true);
+		Time.timeScale = 1;
+	}
+
+	public void StartGame()
+	{
+		currGameState = GameStates.Gameplay;
+		
+		if (isMale)
+		{plyr = Instantiate(playerObjM, transform.position, transform.rotation) as GameObject;}
+		else
+		{plyr = Instantiate(playerObjF, transform.position, transform.rotation) as GameObject;}
+		
+		//plyr.GetComponent(PlayerController).gmmgr = this.GetComponent(GameManager);
+		tdcf.playerTransform = plyr.transform;
+	}
+
+	public void CreditsClicked()
+	{
+		titlePanel.SetActive(false);
+		creditsPanel.SetActive(true);
+	}
+
+	public void CreditsBackClicked()
+	{
+		titlePanel.SetActive(true);
+		creditsPanel.SetActive(false);
 	}
 
 	public void ReplayClicked()
 	{
-
+		tallyPanel.SetActive(false);
+		mainPanel.SetActive(true);
+		gameTimer = 60;
+		score = 0;
+		scoreText.text = "SCORE: " + score.ToString();
+		timerText.text = "TIMER: " + gameTimer.ToString("n0");
+		PlayerController plyrScr = plyr.GetComponent("PlayerController") as PlayerController;
+		plyrScr.ResetPos();
+		for (int i = 0; i < NPCs.childCount; i++)
+		{
+			NPCController npcctrl = NPCs.GetChild(i).GetComponent("NPCController") as NPCController;
+			npcctrl.ResetPos();
+		}
+		Time.timeScale = 1;
+		currGameState = GameStates.Countdown;
+		countdownTimer = 3;
+		countdownText.gameObject.SetActive(true);
+		gameOver = false;
 	}
 
 	public void MainMenuClicked()
 	{
-
-	}
-
-	public void LevelSelectClicked()
-	{
-			
+		Application.LoadLevel(Application.loadedLevel);
+		//titlePanel.SetActive(true);
+		//tallyPanel.SetActive(false);
 	}
 }

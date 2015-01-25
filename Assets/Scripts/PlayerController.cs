@@ -7,11 +7,18 @@ public class PlayerController : MonoBehaviour
 	public float speed = 100;
 	//int facing = 0; // 0 = Down, 1 = Left, 2 = Up, 3 = Right
 	private Animator animator;
+	private Vector3 startPos;
 
 	// Use this for initialization
 	void Start()
 	{
 		animator = this.GetComponent<Animator>();
+		startPos = transform.position;
+	}
+
+	void Awake()
+	{
+		gmmgr = GameObject.Find("GameManager").GetComponent("GameManager") as GameManager;
 	}
 	
 	// Update is called once per frame
@@ -45,5 +52,10 @@ public class PlayerController : MonoBehaviour
 			gmmgr.score += 1;
 			col.GetComponent<NPCController>().scared = true;;
 		}
+	}
+
+	public void ResetPos()
+	{
+		transform.position = startPos;
 	}
 }

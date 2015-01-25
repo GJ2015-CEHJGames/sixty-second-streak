@@ -19,8 +19,11 @@ public class TopDownCameraFollow : MonoBehaviour{
 	{
 		Vector3 trans = transform.position;
 
-		trans.x = playerTransform.position.x;
-		trans.y = playerTransform.position.y;
+		if (playerTransform != null)
+		{
+			trans.x = playerTransform.position.x;
+			trans.y = playerTransform.position.y;
+		}
 
 		//trans.x = Mathf.Clamp(playerTransform.position.x, -15 + (camera.rect.width / 2), 15 - (camera.rect.width / 2));
 		//trans.y = Mathf.Clamp(playerTransform.position.y, -25, 0);

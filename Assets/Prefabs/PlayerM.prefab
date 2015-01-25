@@ -15,7 +15,7 @@ GameObject:
   - 58: {fileID: 5885436}
   - 61: {fileID: 6185436}
   m_Layer: 0
-  m_Name: Player
+  m_Name: PlayerM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,7 +28,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 154816}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .200000003, y: -25.3999996, z: 0}
+  m_LocalPosition: {x: 0, y: -25.3999996, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -57,7 +57,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: 3.49000001
+  m_Radius: 2.3499999
   m_Center: {x: 0, y: 0}
 --- !u!61 &6185436
 BoxCollider2D:
@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gmmgr: {fileID: 0}
-  speed: 400
+  speed: 1000
 --- !u!212 &21254816
 SpriteRenderer:
   m_ObjectHideFlags: 1
