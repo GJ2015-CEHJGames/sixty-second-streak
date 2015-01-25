@@ -8,11 +8,15 @@ public class CarController : MonoBehaviour
 	private Vector2 escapeVector;
 	private bool wasHit = false;
 	public bool scared = false;
+	public AudioSource aSource;
+	public AudioClip honkSound;
+	public AudioClip crashSound;
+	private float honkTimer;
 
 	// Use this for initialization
 	void Start()
 	{
-
+		honkTimer = Random.Range(7.0f, 15.0f);
 	}
 	
 	// Update is called once per frame
@@ -31,6 +35,18 @@ public class CarController : MonoBehaviour
 
 		if (Mathf.Abs(transform.position.x) > 100)
 		{Destroy(gameObject);}
+
+		if (!wasHit)
+		{
+			if (honkTimer > 0)
+			{honkTimer -= Time.deltaTime;}
+			else
+			{
+				aSource.clip = honkSound;
+				aSource.Play();
+				honkTimer = Random.Range(7.0f, 15.0f);
+			}
+		}
 	}
 
 	void OnTriggerEnter2D(Collider2D col)
@@ -39,7 +55,14 @@ public class CarController : MonoBehaviour
 		{
 			escapeVector = (transform.position - col.transform.position).normalized;
 			wasHit = true;
+			aSource.clip = crashSound;
+			aSource.Play();
 		}
+		/*else if (col.name.Contains("NPC") && !wasHit)
+		{
+			aSource.clip = honkSound;
+			aSource.Play();
+		}*/
 	}
 
 }

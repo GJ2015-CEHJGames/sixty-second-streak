@@ -8,8 +8,9 @@ public class NPCController : MonoBehaviour
 	public bool scared = false;
 	public SpriteRenderer sprRenderer;
 	public List<Sprite> bubbleSprites = new List<Sprite>();
+	public GameManager gmmgr;
 	enum States
-	{Waiting, Moving, Escaping};
+	{Waiting, Moving, Escaping, Following};
 	private States currState;
 	private Animator animator;
 	private float waitTimer = 0;
@@ -18,6 +19,10 @@ public class NPCController : MonoBehaviour
 	private Vector2 escapeVector;
 	private Collider2D player;
 	private Vector3 startPos;
+	public bool isPolice = false;
+	private Vector2 followVector;
+	public List<AudioClip> audios = new List<AudioClip>();
+	public AudioSource aSource;
 
 	// Use this for initialization
 	void Start()
@@ -26,6 +31,7 @@ public class NPCController : MonoBehaviour
 		waitTimer = Random.Range(0.1f, 1.0f);
 		animator = this.GetComponent<Animator>();
 		startPos = transform.position;
+
 	}
 	
 	// Update is called once per frame
@@ -38,6 +44,13 @@ public class NPCController : MonoBehaviour
 		renderer.sortingOrder = Mathf.RoundToInt(Mathf.Abs(transform.position.y));
 
 		Vector2 vel = rigidbody2D.velocity;
+
+		if (isPolice && !scared && gmmgr.plyr != null && Vector2.Distance(transform.position, gmmgr.plyr.transform.position) <= 10)
+		{
+			currState = States.Following;
+			followVector = (gmmgr.plyr.transform.position - transform.position).normalized;
+			vel = (speed / 12) * followVector;
+		}
 
 		switch (currState)
 		{
@@ -114,6 +127,8 @@ public class NPCController : MonoBehaviour
 			}
 			animator.SetInteger("Facing", facing);*/
 			currState = States.Escaping;
+			aSource.clip = audios[Random.Range(0, audios.Count)];
+			aSource.Play();
 			Destroy(GetComponent<BoxCollider2D>());
 		}
 	}

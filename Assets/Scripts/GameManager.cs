@@ -29,9 +29,12 @@ public class GameManager : MonoBehaviour
 	public Text timerText;
 	public Text tallyText;
 	public Text countdownText;
+	public Color color1;
+	public Color color2;
 
 	public Transform NPCs;
-	private GameObject plyr;
+	public Transform Trees;
+	public GameObject plyr;
 
 	public AudioSource audioSource;
 
@@ -52,7 +55,7 @@ public class GameManager : MonoBehaviour
 			if (countdownTimer > 0)
 			{
 				countdownTimer -= Time.deltaTime;
-				countdownText.text = countdownTimer.ToString("n0");
+				countdownText.text = countdownTimer.ToString("n0") == "0" ? "Go!!" : countdownTimer.ToString("n0");
 			}
 			else if (countdownTimer <= 0)
 			{
@@ -65,7 +68,13 @@ public class GameManager : MonoBehaviour
 			if (!gameOver)
 			{
 				if (gameTimer > 0)
-				{gameTimer -= Time.deltaTime;}
+				{
+					gameTimer -= Time.deltaTime;
+					if (gameTimer <= 10)
+					{
+						timerText.color = Color.Lerp(color1, color2, Mathf.PingPong(Time.time * 2, gameTimer / 5.0f));
+					}
+				}
 				else
 				{
 					gameOver = true;
@@ -149,6 +158,11 @@ public class GameManager : MonoBehaviour
 		{
 			NPCController npcctrl = NPCs.GetChild(i).GetComponent("NPCController") as NPCController;
 			npcctrl.ResetPos();
+		}
+		for (int j = 0; j < Trees.childCount; j++)
+		{
+			TreeController trctrl = Trees.GetChild(j).GetComponent("TreeController") as TreeController;
+			trctrl.onFire = false;
 		}
 		Time.timeScale = 1;
 		currGameState = GameStates.Countdown;
