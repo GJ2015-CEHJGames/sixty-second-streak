@@ -56,12 +56,12 @@ public class PlayerController : MonoBehaviour
 			gmmgr.score += 1;
 			NPCController npcScr = col.GetComponent<NPCController>() as NPCController;
 			npcScr.scared = true;
-			Sprite randBubble = npcScr.bubbleSprites[Random.Range(0, npcScr.bubbleSprites.Count - 1)];
+			/*Sprite randBubble = npcScr.bubbleSprites[Random.Range(0, npcScr.bubbleSprites.Count - 1)];
 			GameObject bubble = new GameObject("Bubble");
 			SpriteRenderer sr;
 			sr = bubble.AddComponent("SpriteRenderer") as SpriteRenderer;
 			sr.sprite = randBubble;
-			Instantiate(bubble, col.transform.position, transform.rotation);
+			Instantiate(bubble, col.transform.position, transform.rotation);*/
 		}
 		else if (col.name.Contains("Car") && !col.GetComponent<CarController>().scared)
 		{
