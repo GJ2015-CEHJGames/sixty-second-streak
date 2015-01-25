@@ -6,6 +6,10 @@ TextureImporter:
     21300002: playerM2
     21300004: player_2
     21300006: player_3
+    21300008: player_4
+    21300010: player_5
+    21300012: player_6
+    21300014: player_7
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -82,6 +86,46 @@ TextureImporter:
         serializedVersion: 2
         x: 96
         y: 230
+        width: 60
+        height: 80
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: player_4
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 144
+        width: 60
+        height: 80
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: player_5
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 144
+        width: 60
+        height: 80
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: player_6
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 60
+        width: 60
+        height: 80
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: player_7
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 60
         width: 60
         height: 80
       alignment: 0

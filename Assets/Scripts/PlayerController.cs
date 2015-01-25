@@ -24,33 +24,42 @@ public class PlayerController : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		renderer.sortingOrder = Mathf.RoundToInt(Mathf.Abs(transform.position.y));
-
 		Vector2 vel = rigidbody2D.velocity;
 		float horiz = Input.GetAxisRaw("Horizontal");
 		float vert = Input.GetAxisRaw("Vertical");
-		vel = new Vector2(horiz, vert).normalized * speed * Time.deltaTime;
 
-		// Change animation states
-		/*if (vert > 0)
-		{animator.SetInteger("Facing", 2);}
-		else if (vert < 0)
-		{animator.SetInteger("Facing", 0);}
-		if (horiz < 0)
-		{animator.SetInteger("Facing", 1);}
-		else if (horiz > 0)
-		{animator.SetInteger("Facing", 3);}*/
+		if (gmmgr.countdownTimer <= 0)
+		{
+			renderer.sortingOrder = Mathf.RoundToInt(Mathf.Abs(transform.position.y));
 
-		rigidbody2D.velocity = vel;
-		animator.speed = Mathf.Max(Mathf.Abs(horiz), Mathf.Abs(vert));
+			vel = new Vector2(horiz, vert).normalized * speed * Time.deltaTime;
+
+			// Change animation states
+			/*if (vert > 0)
+			{animator.SetInteger("Facing", 2);}
+			else if (vert < 0)
+			{animator.SetInteger("Facing", 0);}
+			if (horiz < 0)
+			{animator.SetInteger("Facing", 1);}
+			else if (horiz > 0)
+			{animator.SetInteger("Facing", 3);}*/
+
+			rigidbody2D.velocity = vel;
+		}
+			animator.speed = Mathf.Max(Mathf.Abs(horiz), Mathf.Abs(vert));
 	}
 
 	void OnTriggerEnter2D(Collider2D col)
 	{
-		if (col.name == "NPC" && !col.GetComponent<NPCController>().scared)
+		if (col.name.Contains("NPC") && !col.GetComponent<NPCController>().scared)
 		{
 			gmmgr.score += 1;
-			col.GetComponent<NPCController>().scared = true;;
+			col.GetComponent<NPCController>().scared = true;
+		}
+		else if (col.name.Contains("Car") && !col.GetComponent<CarController>().scared)
+		{
+			gmmgr.score += 1;
+			col.GetComponent<CarController>().scared = true;
 		}
 	}
 

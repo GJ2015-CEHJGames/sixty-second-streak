@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
 	void Start() 
 	{
 		currGameState = GameStates.Title;
-		Time.timeScale = 0;
+		//Time.timeScale = 0;
 	}
 	
 	// Update is called once per frame
@@ -72,6 +72,7 @@ public class GameManager : MonoBehaviour
 					mainPanel.SetActive(false);
 					tallyPanel.SetActive(true);
 					tallyText.text = score.ToString();
+					Destroy(plyr);
 				}
 			}
 			
@@ -139,8 +140,8 @@ public class GameManager : MonoBehaviour
 		score = 0;
 		scoreText.text = "SCORE: " + score.ToString();
 		timerText.text = "TIMER: " + gameTimer.ToString("n0");
-		PlayerController plyrScr = plyr.GetComponent("PlayerController") as PlayerController;
-		plyrScr.ResetPos();
+		//PlayerController plyrScr = plyr.GetComponent("PlayerController") as PlayerController;
+		//plyrScr.ResetPos();
 		for (int i = 0; i < NPCs.childCount; i++)
 		{
 			NPCController npcctrl = NPCs.GetChild(i).GetComponent("NPCController") as NPCController;

@@ -5,13 +5,14 @@ public class NPCController : MonoBehaviour
 {
 	public float speed = 100;
 	public bool scared = false;
+	public SpriteRenderer sprRenderer;
 	enum States
 	{Waiting, Moving, Escaping};
 	private States currState;
 	private Animator animator;
 	private float waitTimer = 0;
 	private float moveTimer = 0;
-	//private int facing = 0; // 0 = Down, 1 = Left, 2 = Up, 3 = Right
+	private int facing = 0; // 0 = Down, 1 = Left, 2 = Up, 3 = Right
 	private Vector2 escapeVector;
 	private Collider2D player;
 	private Vector3 startPos;
@@ -28,6 +29,10 @@ public class NPCController : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
+		if (scared)
+		{sprRenderer.color = Color.red;}
+		else
+		{sprRenderer.color = Color.white;}
 		renderer.sortingOrder = Mathf.RoundToInt(Mathf.Abs(transform.position.y));
 
 		Vector2 vel = rigidbody2D.velocity;
@@ -41,17 +46,17 @@ public class NPCController : MonoBehaviour
 				else if (waitTimer <= 0)
 				{
 					currState = States.Moving;
-					//facing = Random.Range(0, 5);
+					facing = Random.Range(0, 5);
 					//animator.SetInteger("Facing", facing);
 					moveTimer = Random.Range(0.1f, 2.0f);
-					/*if (facing == 0)
+					if (facing == 0)
 					{vel.y = -speed * Time.deltaTime;}
 					else if (facing == 2)
 					{vel.y = speed * Time.deltaTime;}
 					if (facing == 1)
 					{vel.x = -speed * Time.deltaTime;}
 					else if (facing == 3)
-					{vel.x = speed * Time.deltaTime;}*/
+					{vel.x = speed * Time.deltaTime;}
 					animator.speed = 0.5f;
 				}
 				break;
@@ -109,6 +114,7 @@ public class NPCController : MonoBehaviour
 	public void ResetPos()
 	{
 		transform.position = startPos;
+		sprRenderer.color = Color.red;
 		scared = false;
 	}
 }
