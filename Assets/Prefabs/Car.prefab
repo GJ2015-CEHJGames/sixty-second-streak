@@ -12,7 +12,7 @@ GameObject:
   - 114: {fileID: 11481808}
   - 50: {fileID: 5081808}
   - 61: {fileID: 6181808}
-  - 58: {fileID: 5881808}
+  - 61: {fileID: 6179716}
   - 82: {fileID: 8202614}
   m_Layer: 0
   m_Name: Car
@@ -48,17 +48,17 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
---- !u!58 &5881808
-CircleCollider2D:
+--- !u!61 &6179716
+BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 181808}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Radius: 2.5
-  m_Center: {x: 0, y: 0}
+  m_IsTrigger: 1
+  m_Size: {x: 11.8149719, y: 5.3081665}
+  m_Center: {x: -.282478333, y: .0684814453}
 --- !u!61 &6181808
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -68,8 +68,8 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: 3.75, y: 2.60478592}
-  m_Center: {x: 0, y: -1.19760704}
+  m_Size: {x: 9.26269531, y: 2.60478592}
+  m_Center: {x: -.599220276, y: -1.19760704}
 --- !u!82 &8202614
 AudioSource:
   m_ObjectHideFlags: 1
@@ -165,8 +165,8 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2958782577d9140e8a5fc15c7a51b054, type: 3}
-  m_Color: {r: 1, g: .972413778, b: 0, a: 1}
+  m_Sprite: {fileID: 21300024, guid: 2958782577d9140e8a5fc15c7a51b054, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

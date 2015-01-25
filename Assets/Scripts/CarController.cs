@@ -47,6 +47,8 @@ public class CarController : MonoBehaviour
 				honkTimer = Random.Range(7.0f, 15.0f);
 			}
 		}
+
+		renderer.sortingOrder = Mathf.RoundToInt(Mathf.Abs(transform.position.y));
 	}
 
 	void OnTriggerEnter2D(Collider2D col)

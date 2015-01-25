@@ -170,6 +170,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: df078a0c5621e415ba5178dbb2e5d27e, type: 3}
   - {fileID: 8300000, guid: f2fa264ca9d424383978ff5dd620d03d, type: 3}
   - {fileID: 8300000, guid: a06ed4e8444744fe3b71b3ab1b450dfa, type: 3}
+  - {fileID: 8300000, guid: abee6796108f448a99aed46caf09dc1e, type: 3}
   aSource: {fileID: 8298254}
 --- !u!212 &21239730
 SpriteRenderer:

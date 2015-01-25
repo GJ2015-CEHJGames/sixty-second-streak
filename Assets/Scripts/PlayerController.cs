@@ -69,6 +69,12 @@ public class PlayerController : MonoBehaviour
 			col.GetComponent<CarController>().scared = true;
 			col.GetComponent<CarController>().rigidbody2D.angularVelocity = (Random.value > 0.5) ? 1000 : -1000;
 		}
+		else if (col.name.Contains("Tree") && !col.GetComponent<TreeController>().onFire)
+		{
+			gmmgr.score += 1;
+			col.GetComponent<TreeController>().onFire = true;
+			col.GetComponent<AudioSource>().Play();
+		}
 	}
 
 	public void ResetPos()

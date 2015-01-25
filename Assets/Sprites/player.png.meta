@@ -15,6 +15,17 @@ TextureImporter:
     21300020: NPC2_Scared1
     21300022: NPC2_Scared2
     21300024: car1
+    21300026: treenormal
+    21300028: treefire1
+    21300030: treefire2
+    21300032: NPC3_Walk1
+    21300034: NPC3_Walk2
+    21300036: NPC3_Scared1
+    21300038: NPC3_Scared2
+    21300040: NPC4_Walk1
+    21300042: NPC4_Walk2
+    21300044: NPC4_Scared1
+    21300046: NPC4_Scared2
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -182,6 +193,116 @@ TextureImporter:
         x: 340
         y: 318
         width: 180
+        height: 80
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: treenormal
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 232
+        width: 82
+        height: 83
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: treefire1
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 232
+        width: 82
+        height: 83
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: treefire2
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 232
+        width: 82
+        height: 83
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: NPC3_Walk1
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 146
+        width: 60
+        height: 80
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: NPC3_Walk2
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 146
+        width: 60
+        height: 80
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: NPC3_Scared1
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 148
+        width: 60
+        height: 80
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: NPC3_Scared2
+      rect:
+        serializedVersion: 2
+        x: 603
+        y: 148
+        width: 60
+        height: 80
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: NPC4_Walk1
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 63
+        width: 60
+        height: 80
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: NPC4_Walk2
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 64
+        width: 60
+        height: 80
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: NPC4_Scared1
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 64
+        width: 60
+        height: 80
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: NPC4_Scared2
+      rect:
+        serializedVersion: 2
+        x: 603
+        y: 64
+        width: 60
         height: 80
       alignment: 0
       pivot: {x: .5, y: .5}
