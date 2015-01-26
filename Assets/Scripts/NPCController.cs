@@ -127,8 +127,11 @@ public class NPCController : MonoBehaviour
 			}
 			animator.SetInteger("Facing", facing);*/
 			currState = States.Escaping;
-			aSource.clip = audios[Random.Range(0, audios.Count)];
-			aSource.Play();
+			if (Random.value > 0.5)
+			{
+				aSource.clip = audios[Random.Range(0, audios.Count)];
+				aSource.Play();
+			}
 			Destroy(GetComponent<BoxCollider2D>());
 		}
 	}

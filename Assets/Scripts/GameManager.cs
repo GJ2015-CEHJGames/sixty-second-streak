@@ -39,11 +39,13 @@ public class GameManager : MonoBehaviour
 	public AudioSource audioSource;
 	public AudioClip maleSelectSound;
 	public AudioClip femaleSelectSound;
+	public GameObject whaleObj;
 
 	// Use this for initialization
 	void Start() 
 	{
 		currGameState = GameStates.Title;
+		timerText.color = Color.black;
 		//Time.timeScale = 0;
 	}
 	
@@ -73,9 +75,9 @@ public class GameManager : MonoBehaviour
 				{
 					gameTimer -= Time.deltaTime;
 					if (gameTimer <= 10)
-					{
-						timerText.color = Color.Lerp(color1, color2, Mathf.PingPong(Time.time * 2, gameTimer / 5.0f));
-					}
+					{timerText.color = Color.Lerp(color1, color2, Mathf.PingPong(Time.time * 2, gameTimer / 5.0f));}
+					else
+					{timerText.color = Color.black;}
 				}
 				else
 				{
@@ -109,8 +111,8 @@ public class GameManager : MonoBehaviour
 		currGameState = GameStates.Countdown;
 		mainPanel.SetActive(true);
 		Time.timeScale = 1;
-		audioSource.clip = maleSelectSound;
-		audioSource.Play();
+		//audioSource.clip = maleSelectSound;
+		//audioSource.Play();
 	}
 
 	public void FemaleSelected()
@@ -120,8 +122,8 @@ public class GameManager : MonoBehaviour
 		currGameState = GameStates.Countdown;
 		mainPanel.SetActive(true);
 		Time.timeScale = 1;
-		audioSource.clip = femaleSelectSound;
-		audioSource.Play();
+		//audioSource.clip = femaleSelectSound;
+		//audioSource.Play();
 	}
 
 	public void StartGame()
@@ -176,6 +178,8 @@ public class GameManager : MonoBehaviour
 		countdownText.gameObject.SetActive(true);
 		gameOver = false;
 		Camera.main.transform.position = new Vector3(0, -18.7f, -10);
+		whaleObj.GetComponent<WhaleController>().ResetPos();
+		timerText.color = Color.black;
 	}
 
 	public void MainMenuClicked()

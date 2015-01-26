@@ -26,6 +26,7 @@ TextureImporter:
     21300042: NPC4_Walk2
     21300044: NPC4_Scared1
     21300046: NPC4_Scared2
+    21300048: WHALE
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -304,6 +305,16 @@ TextureImporter:
         y: 64
         width: 60
         height: 80
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WHALE
+      rect:
+        serializedVersion: 2
+        x: 673
+        y: 150
+        width: 402
+        height: 248
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}

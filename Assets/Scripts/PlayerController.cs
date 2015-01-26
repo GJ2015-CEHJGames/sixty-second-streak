@@ -75,6 +75,12 @@ public class PlayerController : MonoBehaviour
 			col.GetComponent<TreeController>().onFire = true;
 			col.GetComponent<AudioSource>().Play();
 		}
+		else if (col.name.Contains("Whale") && !col.GetComponent<WhaleController>().scared)
+		{
+			gmmgr.score += 10;
+			col.GetComponent<WhaleController>().scared = true;
+			col.GetComponent<WhaleController>().rigidbody2D.angularVelocity = (Random.value > 0.5) ? 500 : -500;
+		}
 	}
 
 	public void ResetPos()
